@@ -113,3 +113,17 @@ stack-app/
 ## Author
 
 **Dinesh Aryan M**
+
+
+## Additional interactive versions
+
+This repository also includes a browser visualizer in [index.html](index.html) and a focused terminal stack visualizer in [stack.c](stack.c).
+
+Compile the terminal visualizer with GCC or Clang:
+
+```sh
+gcc -std=c11 -Wall -Wextra -pedantic stack.c -o stack
+./stack
+```
+
+The C terminal version supports push, pop, peek, overflow and underflow feedback, recent move history, undo, reset, and a guided LIFO challenge. Its array capacity is 8 values (up to 31 characters each).
