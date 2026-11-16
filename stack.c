@@ -170,7 +170,8 @@ static void push_value(AppState *state, UndoStack *undo) {
         return;
     }
     save_undo(undo, state);
-    snprintf(state->items[state->size++], VALUE_LEN + 1, "%s", value);
+    memcpy(state->items[state->size], value, strlen(value) + 1);
+    state->size++;
     record(state, "PUSH", value);
     printf(LIME "\n  Pushed %s onto the stack. O(1)\n" RESET, value);
     pause_enter();
